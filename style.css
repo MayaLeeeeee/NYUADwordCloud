@@ -184,6 +184,7 @@ li a {
 
 .container {
   width: 70%;
+  height:350px;
   background-color: transparent;
   align-items: center;
   justify-content: center;
@@ -281,6 +282,13 @@ ul.cloud a::before {
 ul.cloud a:focus::before,
 ul.cloud a:hover::before {
   width: 100%;
+}
+
+.keyword {
+  text-align:center;
+  justify-content: center;
+  position: stick;
+  background-color: black;
 }
 
  @media (prefers-reduced-motion) {
