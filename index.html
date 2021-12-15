@@ -9,10 +9,17 @@
     </div>
 
     <link rel="stylesheet" href="style.css"/>
+    <!-- NYUAD Word Cloud Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <!-- <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script> -->
-    <script src="script.js"></script>
 
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
   </head>
 
 
@@ -37,60 +44,43 @@
 
 <!-- end of navigation bar -->
 <!-- start of keywordPage -->
-    <div class="container">
-    <ul class="cloud" role="navigation" aria-label="Webdev word cloud">
+<div class="mainPage">
+<h1 id="menu">Create Your Word Cloud on NYUAD</h1>
+<!--  -->
+<!-- <ul>
+    <li><a href="#" onclick="toDefault()">Default Style</a>: </li>
+</ul> -->
+<ul>
+    <li><a href="#" onclick="addTag()" id="menuAdd">Add Tag</a></li>
+</ul>
+<ul>
+    <li><a href="#" onclick="removeTag()" id="menuRemove">Remove Tag</a></li>
+</ul>
+<ul>
+    <li><a href="#" onclick="toCreate()" id="menuCreate">New TagCloud</a></li>
+</ul>
+<ul>
 
-    <li><a href="#" data-weight="4"><marquee direction="alternate" scrollamount="3">HTTP</marquee></a></li>
-    <li><a href="#" data-weight="1"><marquee direction="alternate" scrollamount="5">Ember</marquee></a></li>
-    <li><a href="#" data-weight="5"><marquee direction="alternate" scrollamount="2">Sass</marquee></a></li>
-    <li><a href="#" data-weight="8"><marquee behavior="scroll" scrollamount="2">HTML</marquee></a></li>
-    <li><a href="#" data-weight="6"><marquee direction="alternate" scrollamount="2">FlexBox</marquee></a></li>
-    <li><a href="#" data-weight="4"><marquee behavior="alternate" scrollamount="4">API</marquee></a></li>
-    <li><a href="#" data-weight="5"><marquee behavior="scroll" scrollamount="2">VueJS</marquee></a></li>
-    <li><a href="#" data-weight="6"><marquee direction="alternate" scrollamount="1">Grid</marquee></a></li></marquee>
-    <li><a href="#" data-weight="2"><marquee direction="alternate" scrollamount="3">Rest</marquee></a></li></marquee>
-    <li><a href="#" data-weight="4"><marquee direction="alternate" scrollamount="5">HTTP</marquee></a></li></marquee>
-    <li><a href="#" data-weight="1"><marquee direction="alternate" scrollamount="3">Ember</marquee></a></li></marquee>
-    <li><a href="#" data-weight="5"><marquee behavior="alternate" scrollamount="4">Sass</marquee></a></li></marquee>
-    <li><a href="#" data-weight="8"><marquee behavior="scroll" scrollamount="1">HTML</marquee></a></li></marquee>
-    <li><a href="#" data-weight="6"><marquee behavior="alternate" scrollamount="2">FlexBox</marquee></a></li></marquee>
-    <li><a href="#" data-weight="4"><marquee direction="alternate" scrollamount="3">API</marquee></a></li></marquee>
-    <li><a href="#" data-weight="5"><marquee behavior="alternate" scrollamount="5">VueJS</marquee></a></li></marquee>
-    <li><a href="#" data-weight="6"><marquee direction="scroll" scrollamount="2">Grid</marquee></a></li></marquee>
-    <li><a href="#" data-weight="2"><marquee direction="alternate" scrollamount="1">Rest</marquee></a></li></marquee>
+    <li><a href="#" onclick="toDestroy()" id="menuDestroy">Destroy TagCloud</a></li>
+</ul>
+<ul>
+    <li><a href="#" onclick="pause()" id="menuPause">Pause Animation</a></li>
 
-      <li><a href="#" data-weight="4"><marquee direction="alternate" scrollamount="3">HTTP</marquee></a></li>
-      <li><a href="#" data-weight="1"><marquee direction="alternate" scrollamount="5">Ember</marquee></a></li>
-      <li><a href="#" data-weight="5"><marquee direction="alternate" scrollamount="2">Sass</marquee></a></li>
-      <li class="keyword"><a href="#" data-weight="9">NYUAD</a></li>
-      <li><a href="#" data-weight="8"><marquee behavior="scroll" scrollamount="1">HTML</marquee></a></li></marquee>
-      <li><a href="#" data-weight="6"><marquee behavior="alternate" scrollamount="2">FlexBox</marquee></a></li></marquee>
-      <li><a href="#" data-weight="4"><marquee direction="alternate" scrollamount="3">API</marquee></a></li></marquee>
+</ul>
+<ul>
+  <li><a href="#" onclick="resume()" id="menuResume">Resume Animation</a></li>
+</ul>
+<div class="content">
+    <!-- content -->
+</div>
 
-  <li><a href="#" data-weight="4"><marquee direction="alternate" scrollamount="3">HTTP</marquee></a></li>
-  <li><a href="#" data-weight="1"><marquee direction="alternate" scrollamount="5">Ember</marquee></a></li>
-  <li><a href="#" data-weight="5"><marquee direction="alternate" scrollamount="2">Sass</marquee></a></li>
-  <li><a href="#" data-weight="8"><marquee behavior="scroll" scrollamount="2">HTML</marquee></a></li>
-  <li><a href="#" data-weight="6"><marquee direction="alternate" scrollamount="2">FlexBox</marquee></a></li>
-  <li><a href="#" data-weight="4"><marquee behavior="alternate" scrollamount="4">API</marquee></a></li>
-  <li><a href="#" data-weight="5"><marquee behavior="scroll" scrollamount="2">VueJS</marquee></a></li>
-  <li><a href="#" data-weight="6"><marquee direction="alternate" scrollamount="1">Grid</marquee></a></li></marquee>
-  <li><a href="#" data-weight="2"><marquee direction="alternate" scrollamount="3">Rest</marquee></a></li></marquee>
-  <li><a href="#" data-weight="4"><marquee direction="alternate" scrollamount="5">HTTP</marquee></a></li></marquee>
-  <li><a href="#" data-weight="1"><marquee direction="alternate" scrollamount="3">Ember</marquee></a></li></marquee>
-  <li><a href="#" data-weight="5"><marquee behavior="alternate" scrollamount="4">Sass</marquee></a></li></marquee>
-  <li><a href="#" data-weight="8"><marquee behavior="scroll" scrollamount="1">HTML</marquee></a></li></marquee>
-  <li><a href="#" data-weight="6"><marquee behavior="alternate" scrollamount="2">FlexBox</marquee></a></li></marquee>
-  <li><a href="#" data-weight="4"><marquee direction="alternate" scrollamount="3">API</marquee></a></li></marquee>
-  <li><a href="#" data-weight="5"><marquee behavior="alternate" scrollamount="5">VueJS</marquee></a></li></marquee>
-  <li><a href="#" data-weight="6"><marquee direction="scroll" scrollamount="2">Grid</marquee></a></li></marquee>
-  <li><a href="#" data-weight="2"><marquee direction="alternate" scrollamount="1">Rest</marquee></a></li></marquee>
+</div>
 
-  </ul></div>
 
 
 <!-- end of keywordPage -->
-
+<script src="dist/TagCloud.min.js"></script>
+<script src="script.js"></script>
     </body>
 
 </html>

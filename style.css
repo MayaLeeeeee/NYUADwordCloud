@@ -4,7 +4,8 @@
   list-style: none;
   text-decoration: none;
   color: white;
-  background-color: black;
+  /* background-color: black; */
+  background-color: #82A6B1;
 }
 
 .header {
@@ -22,7 +23,9 @@
 } */
 
 .header h1 {
-  font: bold 50px 'helvetica';
+  font-size: 80px;
+  font-family: 'Lobster', cursive;
+
   letter-spacing: 2px;
   margin-top: -1px;
 }
@@ -31,6 +34,8 @@
 body {
   margin-left: 5%;
   margin-right:5%;
+  /* font-family: sans-serif; */
+  text-align: center;
 }
 
 /* navigation bar */
@@ -149,7 +154,8 @@ li a {
 
 .hoverActive:hover {
   background-color: inherit;
-  color: #fff;
+  /* color: #fff; */
+  color:black;
   animation: 1.5s myFlash linear infinite;
   text-shadow: 2px 2px 30px #fff;
   transition: 2s;
@@ -175,29 +181,103 @@ li a {
   padding-bottom:20px;
   margin-bottom:30px;
 } */
-
-.otherKeywords{
-  border:2px solid white;
-  padding-bottom:20px;
-  margin-bottom:30px;
+.light {
+  background: #666;
+  color: #fff;
 }
 
-.container {
-  width: 70%;
-  height:350px;
-  background-color: transparent;
-  align-items: center;
-  justify-content: center;
-  margin-left: 15%;
-  maring-right: 15%;
-  /* border: 2px white; */
-
+.content .tagcloud {
+    display: inline-block;
+    margin: 20px;
 }
 
-.container:hover {
-
+/* .content .tagcloud {
+    display: inline-block;
+    margin: 20px;
+} */
+ul {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.tagcloud {
+    font-size: 16px;
+}
+
+.tagcloud--item {
+    padding: 2px 4px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.tagcloud--item:hover {
+    background-color: rgba(0, 0, 0, .1);
+    border: 1px solid #333;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    opacity: 1 !important;
+    z-index: 100 !important;
+}
+
+.light .tagcloud--item {
+    color: #fff;
+}
+
+.light .tagcloud--item:hover {
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid #fff;
+}
+
+.mainPage a{
+  color: white;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+#menu {
+  color: #D34E24;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+#menu li {
+  font-family: 'Chakra Petch', sans-serif;
+}
+#menuAdd {
+  color:#1D3354;
+}
+
+#menuRemove {
+  color:#616283;
+}
+
+#menuCreate {
+  color: #1E555C;
+}
+
+#menuDestroy {
+  color: #374A67;
+}
+
+#menuPause {
+  color: #25283D;
+}
+
+#menuResume {
+  color:#467599;
+}
 /* ----------------------------------------- */
 /* wordCloud */
 /* html, body {

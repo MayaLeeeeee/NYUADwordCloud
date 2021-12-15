@@ -1,52 +1,56 @@
-var c = document.getElementById("mapDisplay");
-var ctx = c.getContext("2d");
-ctx.font = "20px sans-serif";
-ctx.fillText("NYUAD",10,50);
+// const TagCloud = require('TagCloud');
 
-var menuOne = document.getElementById("menuOne");
-menuOne.addEventListener("click", function() {
-  noPage();
-	changePage(1);
-});
+var texts = [
+    'NYUAD','Purple','Abu Dhabi','Education',
+    'Mental Health',
+];
 
-var menuTwo = document.getElementById("menuTwo");
-menuOne.addEventListener("click", function() {
-  noPage();
-	changePage(0);
-});
+var otherOne = [
+  'NYUAD',
+];
+var tc = TagCloud('.content', texts);
+console.log(tc);
 
-var menuThree = document.getElementById("menuThree");
-menuOne.addEventListener("click", function() {
-  noPage();
-	changePage(2);
-});
+// switch style
+// function toDefault() { document.body.classList.remove('light'); }
 
-function changePage(pageNumber){
-  switch(pageNumber){
-    case 0: // pageZero: keyword page
-      console.log("Reached case 0");
-      document.getElementByClassName("keywordPage").style.display="block";
-      break;
+// add tag
+function addTag() {
+    if (!tc) return;
 
-    case 1: //pageOne: aboutProject page
-      noPage();
-      console.log("reached case1");
-      document.getElementByClassName("aboutProject").style.display="block";
-      break;
-    case 2: //pageTwo: contact page
-      noPage();
-      document.getElementByClassName("contactPage").style.display="block";
-      break;
-  }
-}
-
-function noPage() {
-  // document.getElementById("pageContainer").style.display="none";
-  document.getElementByClassName("keywordPage").style.display="none";
-  document.getElementByClassName("aboutProject").style.display="none";
-  document.getElementByClassName("contactPage").style.display="none";
+    var newWord = window.prompt("Enter a new Keyword!");
+      texts.push(newWord);
+      tc.update(texts);
 
 }
+//remove tag
+function removeTag() {
+    if (!tc) return;
+    texts.pop();
+    tc.update(texts);
+}
 
-// -------------------
-// word cloud
+var otherOne = [];
+
+// make new loud
+function toCreate() {
+      if (otherOne.length >= 3) return;
+      otherOne.push(TagCloud('.content', texts));
+}
+
+//destroy cloud
+function toDestroy() {
+    var last = otherOne[otherOne.length - 1];
+    if (!last) return;
+    last.destroy();
+    otherOne.pop();
+}
+// pause animation
+function pause() {
+    [].concat(tc, otherOne).forEach(function (e) { return e.pause() });
+}
+
+//resume animation
+function resume() {
+    [].concat(tc, otherOne).forEach(function (e) { return e.resume() });
+}
